@@ -1,0 +1,15 @@
+def multiply_mat(X, Y):
+    """Return product of an MxP matrix X with an PxN matrix Y. 
+    If multiplying a 1-D vector by a 2-D matrix ... 
+    X can be substituted for a horizontal vector, Y can be a vertical vector"""
+    
+    try:
+        return [[sum(X[i][k]*Y[k][j] for k in range(len(Y))) for j in range(len(Y[0]))] for i in range(len(X))]
+    
+    except:
+        print("element", X, "is a 1-D vector not a matrix", sep=" ")
+        
+        return [[sum(X[i]*Y[i][j] for i in range(len(Y))) for j in range(len(X))]]
+    
+    else:
+        print("matrix 1 must have as many columns as matrix 2 has rows")
